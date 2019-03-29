@@ -1,0 +1,51 @@
+pacakge.json
+
+json
+javascript object notation
+[
+    {
+        "name":"john",
+        "class":"node"
+    },
+    {
+        "name":"andy",
+        "class":"UI"
+    }
+]
+//////
+>node -v
+v10.15.3
+>npm -v
+6.4.1
+
+///////Generate pacakge.json///////////
+
+Step1 >
+npm init
+
+step2>
+package name: (learnpackage) learnapp
+version: (1.0.0) 
+description: this is app to leran package
+entry point: (index.js) 
+test command: 
+git repository: 
+keywords: node angular react npm
+author: nareshit
+license: (ISC) 
+
+step3>
+yes
+
+//////////Install Package////
+npm install <pacakgename>
+npm i <pakagename>
+
+npm install zone.js@0.9.0
+
+
+//////To install in one go////
+npm install
+
+
+
