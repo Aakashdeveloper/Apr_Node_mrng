@@ -48,4 +48,29 @@ npm install zone.js@0.9.0
 npm install
 
 
+//
+callback
+is function that will fire once it get a response
+
+///
+create node server
+> node server.js
+> localhost:3400
+
+//
+to start
+>>npm start
+for dev
+>>npm run dev
+
+
+//////
+>> Local package:-- local to folder (npm install body-parser)
+>> Global Package:-- in system drive (npm install -g nodemon)
+mac / linux
+> sudo npm install -g nodemon
+window
+> run cmd as admin
+> npm install -g nodemon
+
 
