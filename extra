@@ -73,4 +73,13 @@ window
 > run cmd as admin
 > npm install -g nodemon
 
+/*
+var => we can redeclare and reassgign
+let => we cannot redeclare but reassgin
+const=> nor redeclare nor reassgin
+
+var a =10
+
+var a
+a =10
 
