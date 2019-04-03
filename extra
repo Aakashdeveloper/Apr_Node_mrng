@@ -83,3 +83,42 @@ var a =10
 var a
 a =10
 
+
+Es6 Ecma Script
+Es5
+
+
+writefile=>override the content
+appendFile=> add the content
+
+//Es5
+function add(a,b){
+    return a+b
+}
+
+//Es6
+var add = (a,b) => {
+    return a+b
+}
+
+(a,b) => {
+    return a+b
+}
+
+
+=> transpile
+=>babel
+
+
+//Es5
+var a = 10
+var b = "my age is "+a
+
+//Es6
+var a = 10
+var b = `my age is ${a}`
+
+
+// CRUD
+create read update delete
+post   get   put   delete
