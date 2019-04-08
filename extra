@@ -122,3 +122,11 @@ var b = `my age is ${a}`
 // CRUD
 create read update delete
 post   get   put   delete
+
+
+// template engine
+ejs
+handlebars
+swig
+vash
+jade
