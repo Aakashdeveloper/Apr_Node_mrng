@@ -130,3 +130,6 @@ handlebars
 swig
 vash
 jade
+
+
+npm i @aakashdeveloper/create-node-app
