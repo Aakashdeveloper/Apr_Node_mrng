@@ -1,7 +1,8 @@
 import express from 'express';
-import chalk from 'chalk';
-import morgan from 'morgan';
-
+//import moviesRouter from './src/routes/moviesRouter';
+// import restaurantRouter from './src/routes/restaurantsRouter';
+// const moviesRouter = express.Router();
+// const restaurantRouter = express.Router();
 const app = express();
 const port = 7600;
 
@@ -11,7 +12,6 @@ app.use(express.static(__dirname+'/public'));
 app.set('views','./src/views');
 // template engine
 app.set('view engine','ejs');
-app.use(morgan('tiny'))
 
 const menu = [
         {link:'/',name:'Home'},
@@ -23,6 +23,7 @@ const moviesRouter = require('./src/routes/moviesRouter')(menu);
 const restaurantRouter = require('./src/routes/restaurantsRouter')(menu);
 
 app.get('/',(req,res) => {
+    // res.send('<h1>On home page</h1>')
     res.render('index',{
                 title:'Home Page',
                 menu:menu})
@@ -33,5 +34,5 @@ app.use('/movies',moviesRouter);
 app.use('/restaurants',restaurantRouter)
 
 app.listen(port,(err)=>{
-    console.log(`${chalk.blue(`server is running on port ${port}`)}`)
+    console.log(`server is running on port ${port}`)
 });

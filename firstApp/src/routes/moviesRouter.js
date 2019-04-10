@@ -60,18 +60,24 @@ const movies = [
     }
   ]
 
+function router(nav){
+    moviesRouter.route('/')
+      .get((req,res) => {
+        res.render('movies',{
+                  title:'Movies Page',
+                  menu:nav,
+                  movies})
+    });
 
-moviesRouter.route('/')
-    .get((req,res) => {
-   res.render('movies',{
-                title:'Movies Page',
-                menu:menu,
-                movies:movies})
-});
+    moviesRouter.route('/details')
+      .get((req,res) => {
+          res.render('movies_details',{
+                      title:'Movie Details',
+                      menu:nav})
+      })
+    
+    return moviesRouter
+}
 
-moviesRouter.route('/details')
-    .get((req,res) => {
-        res.render('movies_details',{
-                     title:'Movie Details',
-                     menu:menu})
-     })
+
+module.exports = router;

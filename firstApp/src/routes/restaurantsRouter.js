@@ -134,18 +134,25 @@ const restaurants =[
     }
   ]
 
-restaurantRouter.route('/')
+function router(nav){
+  restaurantRouter.route('/')
     .get((req,res) => {
-    res.render('restaurants',{
-        title:'Restaurants Page',
-                menu:menu,
-                restaurants:restaurants
-    })
-})
+      res.render('restaurants',{
+          title:'Restaurants Page',
+                  menu:nav,
+                  restaurants:restaurants
+      })
+  })
 
-restaurantRouter.route('/details')
-    .get((req,res) => {
-    res.render('restaurants_details',{
-                 title:'Restaurants Details',
-                 menu:menu})
- });
+  restaurantRouter.route('/details')
+      .get((req,res) => {
+        res.render('restaurants_details',{
+                  title:'Restaurants Details',
+                  menu:nav})
+  });
+
+  return restaurantRouter
+}
+
+
+module.exports = router;
