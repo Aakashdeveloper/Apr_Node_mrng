@@ -140,3 +140,10 @@ function add(a,b){
 }
 
 add(1,2)
+
+
+for public api 
+https://github.com/Aakashdeveloper/public-apis
+
+WeatherApi:http://api.openweathermap.org/data/2.5/forecast/daily?id=5308655&appid=fbf712a5a83d7305c3cda4ca8fe7ef29&cnt=5
+NasaApi:https://api.nasa.gov/planetary/apod?api_key=ri0EZkle2DPanZWtyS8oZFgC4coub86CDtV5OiYV&date=2019-04-05

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Weather App</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1><%=title%></h1>
+            <div class="row">
+            <% for(let i=0; i<output.list.length;i++){%>
+                    <div class="card" style="width:200px">
+                            <div class="card-body">
+                              <h4 class="card-title">
+                                  <%=output.list[i].temp.day%>
+                              </h4>
+                              <p class="card-text">
+                                    <%=Date(output.list[i].dt)%>
+                              </p>
+                              <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                    </div>
+            <%}%>
+            </div>
+            
+        </div>
+    </body>
+</html>
+
