@@ -25,12 +25,24 @@ function router(nav){
         
     });
 
-    moviesRouter.route('/details')
+    moviesRouter.route('/details/:id')
       .get((req,res) => {
-          res.render('movies_details',{
-                      title:'Movie Details',
-                      menu:nav})
-      })
+          const { id } = req.params;
+          mongo.connect(url,(err,db) => {
+            if(err)  throw err;
+            const dbo = db.db('classdatabase');
+            dbo.collection('movies').findOne({_id:id},(err,data) => {
+                console.log(data)
+                if(err) throw err;
+                res.render('movies_details',{
+                  title:'Movie Details',
+                  menu:nav,
+                  details:data
+                })
+            });
+          })
+          
+      });
     
     return moviesRouter
 }

@@ -103,10 +103,10 @@
               <h3><%=restaurants[i].name%></h3>
               <div class="row">
                 <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=restaurants[i].contact.phone%></span></h4><h4>
+                  
                   <h4><span class="label label-default"><%=restaurants[i].location.city%></span></h4><h4>
                   <small style="font-family:courier,'new courier';" class="text-muted">
-                     <a href="/restaurants/details" class="text-muted">Read More</a></small>
+                     <a href="/restaurants/details/<%=restaurants[i].name%>" class="text-muted">Read More</a></small>
                   </h4></div>
                 <div class="col-xs-3"></div>
               </div>
