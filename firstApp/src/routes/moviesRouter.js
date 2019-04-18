@@ -1,47 +1,54 @@
-import express from 'express'
-import mongodb from 'mongodb'
+import express from 'express';
+import mongodb from 'mongodb';
+import 'babel-polyfill'
 
 const moviesRouter = express.Router();
 const mongo = mongodb.MongoClient;
 const url = "mongodb://localhost:27017/";
+const database = 'classdatabase'
 
 
 function router(nav){
     moviesRouter.route('/')
       .get((req,res) => {
-        mongo.connect(url,(err,db) => {
-          if(err)  throw err;
-          const dbo = db.db('classdatabase');
-          dbo.collection('movies').find({}).toArray(
-            (err,data) => {
-              if(err) throw err;
-              res.render('movies',{
-                title:'Movies Page',
-                menu:nav,
-                movies:data})
-            }
-          )
-        })
-        
+        (async function mongo(){
+          let client;
+          try{
+            client = await mongodb.connect(url);
+            const db = client.db(database);
+            const col = await db.collection('movies');
+            const data = await col.find().toArray();
+            res.render('movies',{
+              title:'Movies Page',
+              menu:nav,
+              movies:data})
+          }
+          catch(err){
+            throw err;
+          }
+        }())  
     });
 
     moviesRouter.route('/details/:id')
       .get((req,res) => {
           const { id } = req.params;
-          mongo.connect(url,(err,db) => {
-            if(err)  throw err;
-            const dbo = db.db('classdatabase');
-            dbo.collection('movies').findOne({_id:id},(err,data) => {
-                console.log(data)
-                if(err) throw err;
-                res.render('movies_details',{
-                  title:'Movie Details',
-                  menu:nav,
-                  details:data
-                })
-            });
-          })
-          
+          (async function mongo(){
+            let client;
+            try{
+              client = await mongodb.connect(url);
+              const db = client.db(database);
+              const col = await db.collection('movies');
+              const data = await col.findOne({_id:id})
+              res.render('movies_details',{
+                title:'Movies Details',
+                menu:nav,
+                details:data})
+            }
+            catch(err){
+              throw err
+            }
+
+          }())          
       });
     
     return moviesRouter
