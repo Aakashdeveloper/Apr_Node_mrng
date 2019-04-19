@@ -226,3 +226,11 @@ db.mydata.insert({
 })
 
 https://docs.mongodb.com/manual/reference/method/db.collection.insert/
+
+
+////
+CRUD
+create => Post
+read   => GET
+update => PUT
+delete => DELETE
