@@ -5,16 +5,20 @@ import bodyParser from 'body-parser';
 const app = express();
 const port = 7600;
 let db;
-const mongoUrl = 'mongodb://127.0.0.1:27017/';
-const col_name = 'userlist';
+const mongoUrl = 'mongodb://127.0.0.1:27017/'
+const col_name = 'userlist'
+
+app.use(express.static(__dirname+'/public'));
+app.set('view engine','ejs');
+app.set('views', './src/views')
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 //Getting Data
-app.get('/user',(req,res) => {
+app.get('/',(req,res) => {
     db.collection(col_name).find().toArray((err,result) => {
         if(err) throw err;
-        res.send(result)
+        res.render('index',{data:result})
     })
 })
 
@@ -64,12 +68,6 @@ app.delete('/deleteUser',(req,res) => {
         res.send({"message":"deleted"})
     })
 })
-
-
-
-app.get('/',(req,res) => {
-    res.send('<h1>On home page</h1>')
-});
 
 
 MongoClient.connect(mongoUrl,(err,client) =>{
