@@ -27,8 +27,9 @@ app.post('/addUser',(req,res) => {
     db.collection(col_name)
         .insert(req.body,(err,result)=>{
             if(err) throw err;
-            res.send('data inserted')  
+            console.log('data inserted')  
         })
+    res.redirect('/');
 })
 // For user detail
 app.post('/find_by_name',(req,res) => {
@@ -67,6 +68,10 @@ app.delete('/deleteUser',(req,res) => {
         if(err) return res.send(500,err)
         res.send({"message":"deleted"})
     })
+})
+
+app.get('/new',(req,res) => {
+    res.render('admin')
 })
 
 

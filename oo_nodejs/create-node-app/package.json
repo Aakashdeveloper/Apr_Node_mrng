@@ -1,0 +1,76 @@
+{
+  "_from": "@aakashdeveloper/create-node-app",
+  "_id": "@aakashdeveloper/create-node-app@1.0.41",
+  "_inBundle": false,
+  "_integrity": "sha512-3WYIh/z3TLZUTYU2XUdj98wYTuVSVzHwYQMtBSdi50QWWp7rsy0MoceKKBbqaC6Bx0UJc9IdC+SI9pbk+qGOiQ==",
+  "_location": "/@aakashdeveloper/create-node-app",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@aakashdeveloper/create-node-app",
+    "name": "@aakashdeveloper/create-node-app",
+    "escapedName": "@aakashdeveloper%2fcreate-node-app",
+    "scope": "@aakashdeveloper",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@aakashdeveloper/create-node-app/-/create-node-app-1.0.41.tgz",
+  "_shasum": "5909c13deea30e9a0dc0ad5451f3838932143710",
+  "_spec": "@aakashdeveloper/create-node-app",
+  "_where": "/Users/avi/Desktop/Classes/Apr_Node_mrng/oo_nodejs",
+  "author": {
+    "name": "aakashdeveloper"
+  },
+  "bin": {
+    "create-node-app": "./bin/cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Aakashdeveloper/create-node-app/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "babel-polyfill": "^6.26.0",
+    "bcryptjs": "^2.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.2.3",
+    "redis": "^2.8.0"
+  },
+  "deprecated": false,
+  "description": "The Seed will help you build node app with es6 very quick",
+  "homepage": "https://github.com/Aakashdeveloper/create-node-app#readme",
+  "keywords": [
+    "Node",
+    "Es6",
+    "Docker",
+    "babel",
+    "EJS",
+    "Redis",
+    "MongoDB"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@aakashdeveloper/create-node-app",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aakashdeveloper/create-node-app.git"
+  },
+  "scripts": {
+    "commit": "npx git-cz",
+    "dev": "nodemon start.js",
+    "start": "node start.js",
+    "test": "mocha --timeout 10000"
+  },
+  "version": "1.0.41"
+}

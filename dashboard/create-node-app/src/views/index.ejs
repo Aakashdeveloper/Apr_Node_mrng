@@ -54,7 +54,7 @@
                                 <button type="button" class="update btn btn-warning"
                                  data-toggle="modal" data-target="#myModal"
                                  id="<%=data[i].name%>">Edit</button>
-                                <button type="button" class="update btn btn-danger" id="<%=data[i].name%>">
+                                <button type="button" class="delete btn btn-danger" id="<%=data[i].name%>">
                                     Delete
                                 </button>
                             </td>
@@ -104,7 +104,7 @@
                 </div>
             </div>
         </div>
-
+        <script type="text/javascript" src="delete.js"></script>
         <script type="text/javascript">
         $(document).ready(function(){
             $('#myTable').DataTable()
@@ -128,6 +128,47 @@
                         }
                     });
                 });
+                $('.delete').click(function() {
+                    var response = confirm("do you want to delete")
+                    name = this.id;
+                    console.log(response)
+                    if(response === true){
+                        $.ajax({
+                            type: 'DELETE',
+                            url: '/deleteUser',
+                            method: 'delete',
+                            data: {"name":name},
+                            success: function(data){
+                                console.log('data is '+JSON.stringify(data));
+                                window.location.reload()
+                            },
+                            error: function(){
+                                alert('No data');
+                            }
+                        });
+                    }
+                    else{
+                        console.log("not deleted")
+                    }
+                });
+                // update data
+                $(function(){
+                      $('#update_table').on('click', function(e){
+                        var data = $('#update_user').serialize();
+                        e.preventDefault();
+                        $.ajax({
+                          url: '/update_user',
+                          type:'PUT',
+                          data : data,
+                          success: function(data){
+                            window.location.reload()
+                        },
+                        error: function(){
+                          alert('No data');
+                        }
+                      });
+                  });
+                  });
         </script>
     </body>
 </html>
