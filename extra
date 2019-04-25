@@ -234,3 +234,7 @@ create => Post
 read   => GET
 update => PUT
 delete => DELETE
+
+
+//JWT 
+x-access-token
