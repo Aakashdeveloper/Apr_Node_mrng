@@ -14,7 +14,9 @@ app.use(bodyParser.json());
 app.get('/user',(req,res) => {
     db.collection(col_name).find().toArray((err,result) => {
         if(err) throw err;
-        res.send(result)
+        res.setHeader('Access-Control-Allow-Origin','*');
+        res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With,Content-Type,Accept')
+        res.status(200).send(result)
     })
 })
 

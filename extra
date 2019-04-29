@@ -238,3 +238,6 @@ delete => DELETE
 
 //JWT 
 x-access-token
+
+
+npm install -g @aakashdeveloper/create-node-app

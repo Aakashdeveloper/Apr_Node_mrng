@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon start.js"
+    "start": "node start.js",
+    "dev":"nodemon start.js",
+    "test": "mocha --timeout 1000"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,9 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.0",
     "babel-polyfill": "^6.26.0",
-    "express": "^4.16.4"
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "express": "^4.16.4",
+    "mocha": "^6.1.4"
   }
 }
